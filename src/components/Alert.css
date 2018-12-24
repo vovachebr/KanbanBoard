@@ -1,0 +1,18 @@
+[aria-label="Alert"]{
+    position: absolute;
+    width: 50%;
+    height: 20%;
+    left: 25% !important;
+    top:25% !important;
+    background-color: #61DAFB !important;
+}
+
+#modalAlert h1{
+    margin: 0;
+    padding: 5% 0px;
+    text-align: center;
+}
+
+#modalAlert i{
+    color:red;
+}

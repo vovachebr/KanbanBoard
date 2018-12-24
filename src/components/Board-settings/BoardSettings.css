@@ -1,0 +1,39 @@
+label{
+    font-size: 20px;
+}
+
+#boardEditName{
+    width: 40%;
+}
+
+.card{
+    background-color: azure;
+    margin-left: 10%;
+    width: 80%;
+    height: 600px;
+}
+
+.placeToColumnName{
+    width: 20%;
+    height: 10%;
+}
+
+.card button{
+    margin: 15px;
+    margin-left: 5%;
+}
+
+.card div.inline{
+    margin-top: 5px;
+}
+
+.columns.right{
+    margin-right: 30px;
+}
+
+.columns.right div{
+    width: 400px;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px dotted dodgerblue;
+}

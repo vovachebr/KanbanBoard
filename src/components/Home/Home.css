@@ -1,0 +1,18 @@
+table{
+    margin: 2%;
+    width: 96%;
+}
+
+th, td{
+    text-align: center;
+    border: 2px dotted blue; 
+}
+
+button.red, button.btn{
+    margin: 20px;
+    z-index: 0;
+}
+
+.createBoardControl.hidden{
+    display: none;
+}
