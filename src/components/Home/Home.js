@@ -19,6 +19,9 @@ class Home extends Component {
         return (
         <div>
             <Alert appElement={document.getElementById('root')}/>
+            <Link to={`/newtask`} onClick={e => this.props.boards.length===0 ? e.preventDefault() : this.handleClick}>
+                <button className="waves-effect waves-light btn right">New task</button>
+            </Link>
             <div>
             <button className="btn-floating btn-large waves-effect waves-light red left" 
             onClick={()=> {this.isCreateBoardNameVisible = true; this.forceUpdate()} }>

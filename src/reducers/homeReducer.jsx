@@ -6,6 +6,7 @@ let reducer = function(state = [], action) {
       return Object.assign(state, {boards:action.boards});
     case "ADD_BOARD":
       let newId = Math.max.apply(Math,boards.map(e => e.id))+1;
+      newId = newId < 1 ? 1 : newId;
       let newBoard = {name:action.name};
       newBoard.created = new Date();
       newBoard.updated = new Date();
