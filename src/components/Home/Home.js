@@ -67,8 +67,8 @@ class Home extends Component {
             table.push(
             <tr key={board.id}>
                 <td><Link to={`/board/${board.id}`}>{board.name}</Link></td>
-                <td>{board.created.toDateString()}</td>
-                <td>{board.updated.toDateString()}</td>
+                <td>{board.created.slice(0,10)}</td>
+                <td>{board.updated.slice(0,10)}</td>
                 <td><Link to={`/board/${board.id}/settings/`}><i className="small settings material-icons">settings</i></Link></td>
                 <td><button onClick={(e) => this.delete(board.id)}><i className="small settings material-icons">remove_circle</i></button></td>
             </tr>)
