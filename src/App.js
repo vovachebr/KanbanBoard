@@ -10,8 +10,6 @@ import NotFound from './components/NotFound';
 import logo from './logo.svg';
 import './App.css';
 
-let actions = require("./actions/HomeActions");
-
 class App extends Component {
   render() {
     return (
@@ -39,4 +37,4 @@ class App extends Component {
 
 const mapStateToProps = state => state;
 
-export default connect(mapStateToProps,actions)(App);
+export default connect(mapStateToProps)(App);

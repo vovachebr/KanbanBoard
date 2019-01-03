@@ -12,11 +12,5 @@ function deleteBoard (id) {
     }
 };
 
-function setInitialBoards (state) {
-    return {
-        type: "SET_INITIAL_BOARDS",
-        state
-    }
-};
 
-export { addBoard, deleteBoard,setInitialBoards };
+export { addBoard, deleteBoard };
