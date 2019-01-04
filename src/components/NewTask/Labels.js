@@ -36,7 +36,7 @@ class Labels extends Component {
         return labels;
     }
     deleteLabel(e){
-        this.labels = this.labels.filter((l)=>l!=e.target.previousSibling.textContent);
+        this.labels = this.labels.filter((l)=>l!==e.target.previousSibling.textContent);
         this.updatelabelsCallback(this.labels);
         this.forceUpdate();
     }

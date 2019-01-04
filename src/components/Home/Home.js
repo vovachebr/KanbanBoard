@@ -42,7 +42,7 @@ class Home extends Component {
             </div>) : null
             }
             </div>
-            <table className="striped">
+            <table className="highlight">
                 <thead>
                     <tr>
                     <th>Name</th>
