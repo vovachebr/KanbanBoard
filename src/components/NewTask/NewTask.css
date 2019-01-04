@@ -1,0 +1,18 @@
+ #newTaskCard .inline{
+    margin-right: 10%;
+    display: block;
+}
+
+#newTaskCard{
+    height: 80%;
+}
+
+#newTaskCard .error{
+    border: 2px dashed red;
+}
+
+#labels .collection-item{
+    display: inline-block;
+    border: 1px dotted darkcyan;
+    padding: 10px;
+}
