@@ -7,7 +7,7 @@ let reducer = function(state = [], action) {
       let newBoard = {name:action.name};
       newBoard.created = new Date().toISOString();
       newBoard.updated = new Date().toISOString();
-      newBoard.columns = [{id:1,name:"TODO"},{id:2,name:"In progress"},{id:3,name:"Done"}];
+      newBoard.columns = [{id:1,name:"TODO", tasks:[]},{id:2,name:"In progress", tasks:[]},{id:3,name:"Done", tasks:[]}];
       newBoard.filteres = [{name:"For standart employee",filter:(t)=>t}];
       newBoard.id = newId;
       boards.push(newBoard);

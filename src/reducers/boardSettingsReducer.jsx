@@ -10,7 +10,7 @@ let reducer = function(state = [], action) {
         return {...state, board:action.board};
       case "CREATE_COLUMN":
         let newId = Math.max.apply(Math,action.board.columns.map(e => e.id))+1;
-        action.board.columns.push({id:newId, name:action.columnName});
+        action.board.columns.push({id:newId, name:action.columnName, tasks:[]});
         action.board.updated = new Date().toISOString();
         let board = action.board;
         return {...state, board: board};

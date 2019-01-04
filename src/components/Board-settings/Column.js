@@ -9,9 +9,11 @@ class Column extends Component {
         this.board = props.board;
     }
     render() {
-        return (<div>{this.props.name}<i className="small material-icons right" onClick={(e)=> 
+        //make "TODO" undeliteble
+        return (<div>{this.props.name} 
+        {this.props.name !== "TODO" ? <i className="small material-icons right" onClick={(e)=> 
             this.props.deleteColumn(this.board, this.props.name)}
-        >delete_forever</i></div>)
+        >delete_forever</i> : null}</div>)
     }
 }
 

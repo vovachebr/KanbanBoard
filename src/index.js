@@ -8,7 +8,7 @@ import reducer from './reducers/main';
 import './index.css';
 import App from './App';
 
-const standartColumns = [{id:1,name:"TODO"},{id:2,name:"In progress"},{id:3,name:"Done"}];
+const standartColumns = [{id:1,name:"TODO", tasks:[]},{id:2,name:"In progress", tasks:[]},{id:3,name:"Done", tasks:[]}];
 const standartFilteres = [{name:"For standart employee",filter:(t)=>t}];
 const initialState = {homeReducer: 
     {boards :
