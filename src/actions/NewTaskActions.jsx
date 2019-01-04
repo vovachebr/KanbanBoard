@@ -1,7 +1,8 @@
-function createTask (task) {
+function createTask (task, board) {
     return {
         type: "CREATE_TASK",
-        task
+        task,
+        board
     }
 };
 export { createTask };

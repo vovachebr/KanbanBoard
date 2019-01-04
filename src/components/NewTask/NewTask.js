@@ -16,6 +16,10 @@ class NewTask extends Component {
         this.labels = [];
         this.description = "";
         this.taskName = "";
+        this.employee = "";
+        this.priority = "minor";
+        this.type = "feature";
+
     }
     render() {
         return (<div className="card row" id="newTaskCard">
@@ -35,21 +39,22 @@ class NewTask extends Component {
             <br/>
             <div className="input-field inline">
                 <label htmlFor="employee">Employee</label>
-                <input type="text" id="employee" maxLength="100"/>
+                <input type="text" id="employee" maxLength="100"
+                onChange={(e)=> this.employee = e.target.value}/>
             </div>
         </div>
         <div className="col s6">
         <label>Choose priority</label>
-            <select className="browser-default">
+            <select className="browser-default" onChange = {(e)=>this.priority=e.target.value}>
                 <option value="minor">Minor</option>
                 <option value="normal">Normal</option>
                 <option value="major">Major</option>
             </select>
             <br/>
-            <TaskType/>
+            <TaskType updateTypeCallback={this.updateTypeCallback.bind(this)}/>
             <br/>
             <label>Choose board</label>
-            <select className="browser-default">
+            <select className="browser-default" onChange = {(e)=>this.selectedBoardId=e.target.value}>
                 {this.loadBoards()}
             </select>
         </div>
@@ -65,16 +70,31 @@ class NewTask extends Component {
             const board = this.boards[i];
             options.push(<option value={board.id} key={board.id}>{board.name}</option>);
         }
+        this.selectedBoardId = this.boards[0].id;
         return options;
     }
     updatelabelsCallback(labels){
         this.labels = labels;
-        console.log(labels);
+    }
+    updateTypeCallback(value){
+        this.type = value;
     }
 
     tryCreateTask(){
         let isValid = this.validateForm();
         if (isValid){
+            let task = {
+                name: this.taskName,
+                description: this.description,
+                employee: this.employee,
+                labels: this.labels,
+                priority: this.priority,
+                type: this.type
+            };
+            let board = this.boards.find((b)=>b.id === this.selectedBoardId);
+            console.log(board);
+            this.props.createTask(task, board);
+            this.props.history.push(`/board/${this.selectedBoardId}`);
             //добавить задачу на доску
             //редирект на доску
         }
@@ -100,7 +120,7 @@ class NewTask extends Component {
 }
 
 const mapStateToProps = state => {return {boards:state.homeReducer.boards,task:state.newTaskReducer, dialog: state.dialogReducer}};
-const mapDispatchToProps = dispatch => {return {addTask:(task)=>dispatch(actions.addTask(task)),
+const mapDispatchToProps = dispatch => {return {createTask:(task, board)=>dispatch(actions.createTask(task, board)),
     openDialog:(name)=>dispatch(openDialog(name)),
     closeDialog:(name)=>dispatch(closeDialog(name)),
 }}

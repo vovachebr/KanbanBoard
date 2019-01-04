@@ -4,6 +4,7 @@ class TaskType extends Component {
     constructor(props){
         super(props);
         this.showen = "feature";
+        this.updateTypeCallback = props.updateTypeCallback;
     }
     render() {
         return (<div><label>Choose task type</label>
@@ -20,6 +21,7 @@ class TaskType extends Component {
     }
     change(e){
         this.showen = e.target.value;
+        this.updateTypeCallback(e.target.value);
         this.forceUpdate();
     }
 }
