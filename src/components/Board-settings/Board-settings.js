@@ -14,12 +14,15 @@ class BoardSettings extends Component {
         this.board = props.boards.find((b)=>b.id===+props.match.params.id);
     }
     render() {
-        return (<div className="card">
+        return (<div className="card row">
                     <Alert appElement={document.getElementById('root')}/>
+                    <div className="col s6">
                     <label htmlFor="boardEditName" className="left">Board name:</label>
                     <input type="text" placeholder="Board name" className="left" id="boardEditName" maxLength="100" defaultValue={this.board.name}
                     onBlur={(e)=> e.target.value = this.tryUpdateName(e.target.value)}
                     onKeyPress={(e)=> {if(e.key === "Enter") e.target.value = this.tryUpdateName(e.target.value)}}/>
+                    </div>
+                    <div className="col s6">
                     <button className="waves-effect waves-light btn left"
                     onClick={()=> {this.isAddColumnNameVisible = true; this.forceUpdate()} }>
                     Add column</button>
@@ -33,7 +36,10 @@ class BoardSettings extends Component {
                         {this.notValidColumn}
                         </div>) : null}
                     </div>
-                <div className="columns right">{this.renderColumns()}</div>
+                    </div>
+                <div className="col s6 columns">ТУТ СДЕЛАТЬ ФИЛЬТРЫ</div>
+                <div className="col s6 columns">{this.renderColumns()}</div>
+
                 </div>)
     }
 

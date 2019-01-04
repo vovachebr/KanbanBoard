@@ -9,30 +9,21 @@ label{
 .card{
     background-color: azure;
     margin-left: 10%;
+    margin-top: 5%;
+    padding: 20px;
     width: 80%;
-    height: 600px;
+    height: 500px;
 }
 
 .placeToColumnName{
-    width: 20%;
-    height: 10%;
-}
-
-.card button{
-    margin: 15px;
-    margin-left: 5%;
+    height: 60px;
 }
 
 .card div.inline{
     margin-top: 5px;
 }
 
-.columns.right{
-    margin-right: 30px;
-}
-
-.columns.right div{
-    width: 400px;
+.columns div{
     padding: 10px;
     font-size: 18px;
     border: 1px dotted dodgerblue;
