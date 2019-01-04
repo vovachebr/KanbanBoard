@@ -95,8 +95,6 @@ class NewTask extends Component {
             console.log(board);
             this.props.createTask(task, board);
             this.props.history.push(`/board/${this.selectedBoardId}`);
-            //добавить задачу на доску
-            //редирект на доску
         }
         else{
             this.props.openDialog("Alert");
@@ -126,7 +124,3 @@ const mapDispatchToProps = dispatch => {return {createTask:(task, board)=>dispat
 }}
 
 export default connect(mapStateToProps,mapDispatchToProps)(NewTask);
-
-//bug_report
-//extension
-//label
