@@ -103,7 +103,6 @@ class Filteres extends Component {
         if(!this.createFilterName || names.includes(this.createFilterName)){
             this.update(false);
         }else{
-             console.log(this.createFilterFunction);
              this.filteres.push({name: this.createFilterName, filter: this.createFilterFunction});
              this.update(this.filteres);
              this.forceUpdate();
@@ -111,11 +110,9 @@ class Filteres extends Component {
     }
     updateCreateFilterFunction(value){
         this.createFilterFunction = new Function( 't', `return t[${this.createFilterType}].filter(t[${this.createFilterType}].includes(${value}))`);
-        console.log(this.createFilterFunction);
     }
     updateCreateFilterFunctionDropDown(value){
         this.createFilterFunction = new Function( 't', `return t[${this.createFilterType}].filter(t[${this.createFilterType}] === ${value})`);
-        console.log(this.createFilterFunction);
     }
 }
 
