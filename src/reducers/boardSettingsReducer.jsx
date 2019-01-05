@@ -4,6 +4,10 @@ let reducer = function(state = [], action) {
         action.board.name = action.name;
         action.board.updated = new Date().toISOString();
         return {...state, board:action.board};
+      case "UPDATE_FILTERES":
+        action.board.filteres = action.filteres;
+        action.board.updated = new Date().toISOString();
+        return {...state, board:action.board};
       case "DELETE_COLUMN":
         action.board.columns.splice(action.board.columns.findIndex((c)=>c.name===action.columnName),1);
         action.board.updated = new Date().toISOString();

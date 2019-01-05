@@ -22,4 +22,12 @@ function createNewColumn (board,columnName) {
     }
 };
 
-export { updateBoardName,deleteColumn,createNewColumn };
+function updateFilteres (board,filteres) {
+    return {
+        type: "UPDATE_FILTERES",
+        board,
+        filteres
+    }
+};
+
+export { updateBoardName,deleteColumn,createNewColumn,updateFilteres };

@@ -2,6 +2,7 @@
     position: absolute;
     width: 50%;
     height: 20%;
+    min-height: 180px;
     left: 25% !important;
     top:25% !important;
     background-color: #61DAFB !important;

@@ -5,6 +5,7 @@ import { openDialog, closeDialog } from "redux-dialog";
 import Alert from '../Alert';
 import './BoardSettings.css';
 import Column from './Column';
+import Filteres from './Filteres';
 
 let actions = require("../../actions/BoardSettingsActions");
 class BoardSettings extends Component {
@@ -16,13 +17,13 @@ class BoardSettings extends Component {
     render() {
         return (<div className="card row">
                     <Alert appElement={document.getElementById('root')}/>
-                    <div className="col s6">
+                    <div className="col s7">
                     <label htmlFor="boardEditName" className="left">Board name:</label>
                     <input type="text" placeholder="Board name" className="left" id="boardEditName" maxLength="100" defaultValue={this.board.name}
                     onBlur={(e)=> e.target.value = this.tryUpdateName(e.target.value)}
                     onKeyPress={(e)=> {if(e.key === "Enter") e.target.value = this.tryUpdateName(e.target.value)}}/>
                     </div>
-                    <div className="col s6">
+                    <div className="col s5">
                     <button className="waves-effect waves-light btn left"
                     onClick={()=> {this.isAddColumnNameVisible = true; this.forceUpdate()} }>
                     Add column</button>
@@ -37,8 +38,8 @@ class BoardSettings extends Component {
                         </div>) : null}
                     </div>
                     </div>
-                <div className="col s6 columns">ТУТ СДЕЛАТЬ ФИЛЬТРЫ</div>
-                <div className="col s6 columns">{this.renderColumns()}</div>
+                <div className="col s8"><Filteres currentFilteres={this.board.filteres} updateFilteres={this.updateBoardFilteres.bind(this)}/></div>
+                <div className="col s4 columns right">{this.renderColumns()}</div>
 
                 </div>)
     }
@@ -78,11 +79,22 @@ class BoardSettings extends Component {
         this.props.createNewColumn(this.board,name);
         return name;
     }
+
+    updateBoardFilteres(filteres){
+        if(!filteres){
+            this.props.openDialog("Alert");
+            setTimeout(()=>this.props.closeDialog("Alert"),5000);
+        }
+        else{
+            this.props.updateFilteres(this.board,filteres);
+        }
+    }
 }
 
 const mapStateToProps = state => {return {boards:state.homeReducer.boards, state:state.boardSettingsReducer}};
 const mapDispatchToProps = dispatch => {return {createNewColumn:(name)=>dispatch(actions.createNewColumn(name)),
     updateBoardName:(id,name)=>dispatch(actions.updateBoardName(id,name)),
+    updateFilteres:(board,filteres)=>dispatch(actions.updateFilteres(board,filteres)),
     openDialog:(name)=>dispatch(openDialog(name)),
     closeDialog:(name)=>dispatch(closeDialog(name)),
 }}

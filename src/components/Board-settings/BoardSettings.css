@@ -20,11 +20,19 @@ label{
 }
 
 .card div.inline{
-    margin-top: 5px;
+    margin-top: 0;
+}
+
+button.btn.left {
+    margin-top: 10px;
 }
 
 .columns div{
     padding: 10px;
     font-size: 18px;
     border: 1px dotted dodgerblue;
+}
+
+.filterProperties{
+    height: 100px;
 }
