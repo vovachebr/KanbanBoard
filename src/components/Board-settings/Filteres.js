@@ -32,7 +32,7 @@ class Filteres extends Component {
                     { this.isPropertyDropDownShowen ? <button className="waves-effect waves-light btn left"
                     onClick={() => this.tryAddFilter()}>Apply</button> : null}
                     </div>
-                <div className="filteresList col s4">
+                <div className="filteresList col s6">
                     {this.renderFilteres()}    
                 </div>
                 </div>)
