@@ -61,7 +61,7 @@ class Home extends Component {
 
     createTable(){
         let table = [];
-        let sortedBoards = this.boards.sort((b1,b2)=>b2.updated-b1.updated);
+        let sortedBoards = this.boards.sort((b1,b2)=>new Date(b2.updated)-new Date(b1.updated));
         for (let i = 0; i < this.boards.length; i++) {  
             let board = sortedBoards[i];          
             table.push(
