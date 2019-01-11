@@ -27,7 +27,7 @@ button.btn.left {
     margin-top: 10px;
 }
 
-.columns div{
+.columns .column{
     padding: 10px;
     font-size: 18px;
     border: 1px dotted dodgerblue;

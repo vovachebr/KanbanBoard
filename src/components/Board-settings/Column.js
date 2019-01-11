@@ -10,7 +10,7 @@ class Column extends Component {
     }
     render() {
         //make "TODO" undeliteble
-        return (<div>{this.props.name} 
+        return (<div class="column">{this.props.name} 
         {this.props.name !== "TODO" ? <i className="small material-icons right" onClick={(e)=> 
             this.props.deleteColumn(this.board, this.props.name)}
         >delete_forever</i> : null}</div>)
