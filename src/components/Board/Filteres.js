@@ -7,7 +7,7 @@ let actions = require("../../actions/BoardActions");
 class Filteres extends Component {
 
     render() {
-        return (<div className="filteres left"><span>Quick filters:</span>
+        return (<div className="filteres"><span>Quick filters:</span>
                 <ul>
                 {this.addFilteres()}
                 </ul>

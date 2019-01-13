@@ -13,11 +13,11 @@ span{
 }
 
 .filteres{
-    padding: 20px;
+    text-align: left;
 }
 
 ul, li{
-    display: inline;
+    display: inline-block;
 }
 
 label{
@@ -29,4 +29,14 @@ label{
 [type="checkbox"]:checked+label {
     background-color: rgb(50, 94, 136);
     color: #61DAFB;
+}
+
+.board{
+    display: flex;
+}
+
+.columns{
+    width:100%;
+    display: flex;
+    justify-content: space-around;
 }

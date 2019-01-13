@@ -32,7 +32,8 @@ const testInitialColumns = [
             type: "feature",
         }
     ]},
-    {id:3,name:"Done", tasks:[]}
+    {id:3,name:"Done", tasks:[]},
+    {id:4,name:"TestColumn", tasks:[]}
 ];
 const standartFilteres = [{name:"For standart employee",filter:(t)=>t}];
 const testInitialFilteres = [{name:"For standart employee",filter:(t)=>t},{name:"Нормальные задания",filter:(t)=>t["priority"].filter(t["priority"] === "normal")}];
