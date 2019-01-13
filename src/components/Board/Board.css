@@ -2,9 +2,10 @@ h2, span{
     text-align: left;
     margin: 0px;
     padding-left: 5%;
+    white-space: nowrap;
 }
 
-span{
+span.filteres{
     display: inline;
     color: #7C7D7D;
     text-transform: uppercase;
